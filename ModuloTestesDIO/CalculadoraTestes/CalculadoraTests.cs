@@ -49,7 +49,21 @@ namespace ModuloTestesDIO.CalculadoraTestes
             bool resultado = _calc.EhPar(numero);
 
             //Assert 
-            Assert.True(resultado);  
+            Assert.True(resultado);
+        }
+
+        [Theory]
+        [InlineData(2)]
+        [InlineData(4)]
+        [InlineData(6)]
+        [InlineData(9)]
+        [InlineData(10)]
+        public void DeveVerificarSeOsNumerosSaoParesERetornarVerdadeiro(int numero)
+        { 
+            //Act
+            bool resultado = _calc.EhPar(numero);
+            //Assert
+            Assert.True(resultado);
         }
     }
 }
