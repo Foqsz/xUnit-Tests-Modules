@@ -10,7 +10,12 @@ namespace ModuloTestesDIO.Calculadora.Services
     {
         public int Somar(int num1, int num2)
         {
-            return num1 + num2 +1;
+            return num1 + num2;
+        }
+
+        public bool EhPar(int numero)
+        {
+            return numero % 2 == 0;
         }
     }
 }
