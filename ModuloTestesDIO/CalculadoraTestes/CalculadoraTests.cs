@@ -56,7 +56,7 @@ namespace ModuloTestesDIO.CalculadoraTestes
         [InlineData(2)]
         [InlineData(4)]
         [InlineData(6)]
-        [InlineData(9)]
+        [InlineData(8)]
         [InlineData(10)]
         public void DeveVerificarSeOsNumerosSaoParesERetornarVerdadeiro(int numero)
         { 
@@ -64,6 +64,16 @@ namespace ModuloTestesDIO.CalculadoraTestes
             bool resultado = _calc.EhPar(numero);
             //Assert
             Assert.True(resultado);
+        }
+
+        [Theory]
+        [InlineData(new int[] { 2, 4 })]
+        [InlineData(new int[] { 6, 4, 8, 10 })] 
+        public void ArrayVerificarSeOsNumerosSaoParesERetornarVerdadeiro(int[] numeros)
+        {
+           //Act / Asssert
+
+           Assert.All(numeros, num => Assert.True(_calc.EhPar(num)));     
         }
     }
 }
